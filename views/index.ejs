@@ -1,13 +1,13 @@
 <%- include('partials/head') %>
+
 <header>
     <%- include('partials/nav') %>
 </header>
+
 <main>
     <form action="/more" method="POST">
         <ul>
-            <% for( let i = 0; i < 100; i++) { 
-                let randomImage = images[ Math.floor(  Math.random() * images.length )  ];
-            %>
+            <% for( let i = 0; i < 100; i++) { let randomImage = images[ Math.floor( Math.random() * images.length ) ]; %>
                 <li>
                     <a href="#">
                         <picture>
@@ -19,52 +19,50 @@
                 </li>
             <% } %>
         </ul>
-        <button type="submit">more</button>
+        <button type="submit"> more </button>
     </form>
 </main>
-
-
 
 <footer>
     <ul>
         <li>
             <% if (current == '/en') { %> 
-                <button>All objects</button>
+                <button> All objects </button>
             <% } %> 
             <% if (current == '/ar') { %> 
-                <button>جميع الكائنات</button>  
+                <button> جميع الكائنات </button>  
             <% } %>
         </li>
         <li>
             <% if (current == '/en') { %> 
-                <button>Pottery</button>
+                <button> Pottery </button>
             <% } %> 
             <% if (current == '/ar') { %> 
-                <button>الفخار</button>
+                <button> الفخار </button>
             <% } %>
         </li>
         <li>
             <% if (current == '/en') { %> 
-                <button>Islamic art</button>
+                <button> Islamic art </button>
             <% } %> 
             <% if (current == '/ar') { %> 
-                <button>الفن الإسلامي</button>
+                <button> الفن الإسلامي </button>
             <% } %>
         </li>
         <li>
             <% if (current == '/en') { %> 
-                <button>Tapestry</button>
+                <button> Tapestry </button>
             <% } %> 
             <% if (current == '/ar') { %> 
-                <button>نسيج</button>
+                <button> نسيج </button>
             <% } %>
         </li>
         <li>
             <% if (current == '/en') { %> 
-                <button>Glass</button>
+                <button> Glass </button>
             <% } %> 
             <% if (current == '/ar') { %> 
-                <button>زجاج</button>
+                <button> زجاج </button>
             <% } %>
         </li>
     </ul>
@@ -73,19 +71,10 @@
             <input type="search" placeholder="Search the collection">
         </label>
         <button type="submit">
-            <span hidden="screen">Search</span>
+            <span hidden="screen"> Search </span>
             <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 72 72"><path d="M 31 11 C 19.973 11 11 19.973 11 31 C 11 42.027 19.973 51 31 51 C 34.974166 51 38.672385 49.821569 41.789062 47.814453 L 54.726562 60.751953 C 56.390563 62.415953 59.088953 62.415953 60.751953 60.751953 C 62.415953 59.087953 62.415953 56.390563 60.751953 54.726562 L 47.814453 41.789062 C 49.821569 38.672385 51 34.974166 51 31 C 51 19.973 42.027 11 31 11 z M 31 19 C 37.616 19 43 24.384 43 31 C 43 37.616 37.616 43 31 43 C 24.384 43 19 37.616 19 31 C 19 24.384 24.384 19 31 19 z"/></svg>
         </button>
     </form>
-    
-    
-
 </footer>
-<!-- <button class="left">left</button>
-<button class="top">top</button>
-<button class="right">right</button>
-<button class="bottom">bottom</button>
-<ul>
-    <li>1</li>
-</ul> -->
+
 <%- include('partials/foot') %>
