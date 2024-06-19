@@ -2,22 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     transition: all .2s ease-out;
     font-family: "Cairo", sans-serif;
-    
 }
 
 *:lang(ar) {
     text-align: right;
-    /* color: red; */
     direction: rtl;
     -webkit-locale: "ar";
 }
 
 *:lang(en) {
     text-align: left;
-    /* color: blue; */
     direction: ltr;
     -webkit-locale: "en";
 }
@@ -29,13 +25,8 @@
 html {
     font-family: "Cairo", sans-serif;
 }
-/* 
-body {
-    height: 100vh;
-} */
 
 /* BASIC ELEMENTS --------------------------------------------------------------- BASIC ELEMENTS -------------------------------------------------------------------------------*/
-
 .mobile-hidden {
     display: none;
 }
@@ -71,7 +62,6 @@ header nav {
     text-transform: uppercase;
     font-weight: bold;
     height: 70px; 
-
     position: fixed;
     top: 0;
     z-index: 1;
@@ -92,7 +82,6 @@ header ul {
 }
 
 header a {
-    /* all: unset; */
     cursor: pointer;
     line-height: 1.25em;
     display: inline-block;
@@ -145,10 +134,8 @@ main {
     width: 100%;
     margin-top: 70px;
     padding: .5em;
-    /* background-color: hotpink; */
     display: flex;
     flex-direction: row;
-    /* overflow-y: scroll; */
 }
 
 main ul {
@@ -160,15 +147,6 @@ main ul {
     overflow: auto;
     justify-content: space-between;
     list-style: none;
-/* 
-    &::before {
-        content: '';
-        background: linear-gradient(transparent, white);
-        position: absolute;
-        height: 10%;
-        width: 100%;
-        bottom: 0;
-    }  */
 }
 
 main ul li {
@@ -233,8 +211,8 @@ footer form {
 
 footer label {
     width: 100%;
-    /* display: inline-block; */
     position: relative;
+    
     &::after {
         content: '';
         background-color: #464646;
@@ -295,7 +273,7 @@ footer input:placeholder-shown {
     footer {
         width: 80%;
         margin: 2em auto;
-     }
+    }
 }
 
 /* DESKTOP */
@@ -313,9 +291,9 @@ footer input:placeholder-shown {
 
     main ul {
         column-count: 7;
-     }
+    }
 
-     footer {
+    footer {
         width: 50%;
-     }
+    }
 }
