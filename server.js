@@ -3,15 +3,13 @@ import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 const app = express()
+
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
-
 app.use(express.json())
-
 app.set('port', process.env.PORT || 8001)
-
 app.listen(app.get('port'), function () {
     console.log(`Application started on http://localhost:${app.get('port')}`)
 })
@@ -19,8 +17,6 @@ app.listen(app.get('port'), function () {
 
 // BASIS ENDPOINTS
 const apiUrl = 'https://fdnd-agency.directus.app/items'
-// const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
-
 const imagesData = await fetchJson(apiUrl + `/fabrique_art_objects/?fields=*,image.height,image.width,image.id`) 
 
 // Shuffelen functie 
@@ -34,15 +30,14 @@ function shuffle(array) {
     }   
 }
 
-// ROUTES
+// Variabelen voor je routes
 const allImages = app.locals.storage = []; 
 let currentIndex = 0
 let offset = 0
 const images = imagesData.data  
 const sliced = images.slice(0, 22)
-// offset.push(...allImages) // ... betekent spreaden dus over alles
-// console.log(allImages)
 
+// ROUTES
 app.get('/', function (request, response) {
     response.render('index', {
         current: '/en', 
@@ -54,11 +49,8 @@ app.post('/more', (request, response) => {
     offset += 5 
     shuffle(images.slice(currentIndex, offset += 5))
     const sliced = images.slice(currentIndex, offset)
-
     if(offset >= images.length) { 
-        
     } 
-
     response.render('index', {     
         images: sliced,
         current: '/en' 
